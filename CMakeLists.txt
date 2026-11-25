@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(Prism CXX)
+set(CMAKE_CXX_STANDARD 17)
+find_package(SDL2 REQUIRED)
+find_package(OpenGL REQUIRED)
+add_executable(prism main.cpp)
+target_include_directories(prism PRIVATE ${SDL2_INCLUDE_DIRS})
+target_link_libraries(prism PRIVATE ${SDL2_LIBRARIES} OpenGL::GL)
